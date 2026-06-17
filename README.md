@@ -1,16 +1,3 @@
----
-title: NutriSense AI
-emoji: 🥗
-colorFrom: teal
-colorTo: blue
-sdk: streamlit
-sdk_version: 1.32.0
-app_file: app.py
-pinned: false
-license: mit
----
-
-
 # 🥗 NutriSense AI
 ### Intelligent Food Recognition and Personalized Nutrition Recommendation System
 

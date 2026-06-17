@@ -1,19 +1,47 @@
 """
-NutriSense AI — Hugging Face Spaces Entry Point
-================================================
-HF Spaces runs: streamlit run app.py
-This file bootstraps the app from streamlit_app/Home.py
+NutriSense AI — Application Launcher
+=====================================
+Phase II: Streamlit GUI + SQLite database (dummy predictions, no ML model yet).
+
+Run the app:
+    streamlit run streamlit_app/Home.py
+
+Or from this file:
+    streamlit run app.py
 """
 
+import subprocess
 import sys
-import os
 from pathlib import Path
 
-# ── Path setup ────────────────────────────────────────────────────────────────
 ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT))
-sys.path.insert(0, str(ROOT / "streamlit_app"))
-sys.path.insert(0, str(ROOT / "src"))
+HOME = ROOT / "streamlit_app" / "Home.py"
 
-# ── Run Home page ─────────────────────────────────────────────────────────────
-exec(open(ROOT / "streamlit_app" / "Home.py").read())
+
+def main() -> None:
+    """Launch the Streamlit dashboard."""
+    if not HOME.exists():
+        print(f"Error: entry point not found at {HOME}")
+        sys.exit(1)
+
+    print("=" * 60)
+    print("  NutriSense AI — Phase 1 GUI Prototype")
+    print("=" * 60)
+    print()
+    print("  Starting Streamlit server...")
+    print(f"  Entry: {HOME}")
+    print()
+    print("  Command:")
+    print("    streamlit run streamlit_app/Home.py")
+    print()
+    print("=" * 60)
+
+    subprocess.run(
+        [sys.executable, "-m", "streamlit", "run", str(HOME)],
+        cwd=str(ROOT),
+        check=False,
+    )
+
+
+if __name__ == "__main__":
+    main()
