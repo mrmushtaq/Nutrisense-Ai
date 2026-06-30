@@ -1,0 +1,1 @@
+"""Model evaluation utilities for NutriSense AI food recognition model."""

@@ -1,0 +1,1 @@
+"""Calorie goal calculator — re-exports from src.ai.calorie_calculator for backward compatibility."""

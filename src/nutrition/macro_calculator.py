@@ -1,0 +1,1 @@
+"""Macronutrient calculation utilities for NutriSense AI."""
